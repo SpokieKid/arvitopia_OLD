@@ -1,0 +1,95 @@
+---
+title: "2021_09_08"
+---
+
+# Doings
+2021-09-08-08:43
+- [x] 上课
+
+2021-09-08-10:03
+- [x] 刚刚在 build gatsby
+- [ ] 现在准备阅读 discord announcements
+
+2021-09-08-11:06
+- [ ] 下课了 读文章 [A Trust and Moderation System for the Decentralized Web - A Decentralized World](https://adecentralizedworld.com/2020/06/a-trust-and-moderation-system-for-the-decentralized-web/)
+
+2021-09-08-17:31
+- [ ] 吃了晚饭，准备开始 review notes
+
+- todos
+	- [ ] reply to KEXIN
+		- ![[2021_09_01#^0901podcast]]
+	- [ ] 读完之前的那个关于 job 的文章来确定自己要不要转专业
+	- [ ] 跟进一下jessie的推特
+	- [ ] think I need to re-read all the blogs site and tag them
+
+# Ideas
+## Bluesky
+- #bluesky 
+	- Taking the ecosystem review as the starting point
+	- [ ] Comments requested on event-organising team
+	- what the community is needing right now: [ref](https://discord.com/channels/867838494897078302/867838494897078305/884858790913138719)
+		- link hackmd.io docs into github readmes 
+		- make sure each discord channel has a link to a corresponding readme in the repo, that is editable by hackmd, in the topic of the channel
+		- gather quality links from the topic channels and add to the readme
+		- reach out to the workgroup leads and see if they need help getting their info into the repo and access to it
+		- move all the bluesky-community taiga tasks into the github issues; also make sure the gitlab issues made it over into github
+	- Twitter can do:
+		- HTML pages for rendering, and they import JS files that can be parsed as JSON. Most companies offer JSON exports
+		- and: export included db IDs and seemingly ALL my user-generated content. Very impressive.
+
+## Decentralization
+
+- [A Trust and Moderation System for the Decentralized Web - A Decentralized World](https://adecentralizedworld.com/2020/06/a-trust-and-moderation-system-for-the-decentralized-web/)
+	- I'm wondering how might decentralized system make the good content creators go away, leaving only bad creators in the game. In my opinion, if it's a decentralized system, then ppl get to choose things they like. And suppose, they are educated and know what things are good or bad, they can distinguish the good content creator from the bad ones, therefore driving the bad out of the public sight.
+	- Algorithmically determined feeds are the next stage in the evolution of socail networks, but these feeds have their own set of problems.
+		- Users have no insight into the decisions the algorithm make. With the help of neural networks, sometimes even developers are unable to explain what is happening inside the internal logic.
+		- Neither the content creator nor the user gets to decide how the feed is rated, only the algorithm does the job, and the decision is final.
+		- Though useful in moderation, this can quickly turn dangerous if optimized for dopamine hits and short term emotional appeal over mental health and well-being.
+- [Scuttlebutt](https://scuttlebutt.nz/)
+	- Technically Scuttlebutt is not a social network, it is a system for building any kind of decentraliezed application.
+- [干货 | 什么是比特币默克尔化抽象语法树？ (qq.com)](https://mp.weixin.qq.com/s?__biz=MzIwODA3NDI5MA==&mid=2652532926&idx=1&sn=9e3a172e81309beaee95105e65070b80&scene=21#wechat_redirect)
+- [Road to Devcon: The Ethereum developer conference](https://www.devcon.org/en/#participate)
+	- [Road to Devcon: The Ethereum developer conference](https://www.devcon.org/en/#learn)
+
+- [syn (synthicy.com)](https://www.synthicy.com/)
+
+## hacks
+
+- Windows 10 Not hibernating
+	- [windows 7 - Legacy Kernel Caller preventing sleep mode - Super User](https://superuser.com/questions/370429/legacy-kernel-caller-preventing-sleep-mode)
+	- Powercfg -requestsoverride Driver "Legacy Kernel Caller" System
+	- powercfg -requests
+- `Command failed with exit code 128: git clone` #error
+	- `OpenSSL SSL_read:    Connection was reset, errno 10054`
+	- Don't need actually to clone from github, but directly gatsby new.
+- `Failed at the mozjpeg@7.1.0 postinstall script.` #error 
+	- Clean cache (and delete the package-lock file
+	```
+	rm -rf node_modules
+	npm cache clean --force
+	npm install
+	```
+	- or reinstall mozjpeg
+	- after this, try `npm install`, then use `npm audit fix` to fix dependency problem.
+- `error: src refspec main does not match any` #error 
+	```
+	git add .
+	git commit -m "initial commit"
+	git push origin main
+	```
+- `Failed to connect to github.com port 443 after 21133 ms: Timed out` #error 
+
+## Readings
+- [主页 (yangruipis.github.io)](https://yangruipis.github.io/)
+- 公众号 yolo notes
+- [何谓渐进式总结：Progressive Summarization (notion.so)](https://www.notion.so/Progressive-Summarization-faf06977850b46a6a7de1623ebf699f2)
+	- #渐进式总结 
+	- 困难的不是将这些信息从一个地方传输到另一个地方，而是「跨越时距传递 」（What is difficult is not transferring content from place to place, but transferring it through time.）
+	- 真正的挑战在于，知道什么知识有价值，并且建立一个系统，将其中的部分知识跨跃时距传递，将现在学习到的知识存储，转移给未来。这样才能在未来需要的时候，方便的调用。
+	- [判断时距 (notion.so)](https://www.notion.so/55b8b009c7e047398323c2904d462d44)
+	- 大脑在认知方面比单纯的”记忆“要强太多。作者也是这么说，但是我们如何让自己recall呢？
+		- 作者的解释是，你记录的这些东西，你也不知道到底有没有用。笔记的意义在于你用什么视角来审视它。
+		- 与其说是用笔记来回答你现在有的问题，不如把它们包装成未来你无法想象的问题的潜在答案。
+		- 笔记系统是为了让你==提出更好的问题==。
+		- 作者开发了 flomo
